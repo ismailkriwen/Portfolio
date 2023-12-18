@@ -12,7 +12,7 @@ export const ThemeToggler = () => {
 
   useEffect(() => {
     resolvedTheme === "dark" && setIsSelected(true);
-  }, []);
+  }, [resolvedTheme]);
 
   return (
     <Switch size="sm" isSelected={isSelected} onValueChange={changeTheme} />

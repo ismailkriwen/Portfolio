@@ -11,7 +11,7 @@ export const Hero = () => {
       <div className="absolute inset-0 md:min-h-[400px] bg-[url('/hero_section-background.jpg')] bg-center bg-no-repeat bg-cover opacity-30 -z-10" />
       <div className="container py-4 flex max-md:flex-col justify-center items-center gap-10 md:gap-10">
         <div className="font-medium md:text-5xl text-2xl flex flex-col justify-center max-md:text-center md:w-1/2">
-          Hello, I'm Ismail and i'm a{" "}
+          Hello, I&apos;m Ismail and i&apos;m a{" "}
           <span>
             <span className="text-blue-500">
               <Typewriter words={["Front-End", "Full-Stack"]} loop={false} />

@@ -1,5 +1,6 @@
 "use client";
 
+import { SOCIAL_LINKS } from "@/constants";
 import {
   Modal,
   ModalBody,
@@ -9,6 +10,7 @@ import {
 } from "@nextui-org/react";
 import { Rss } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type SocialModalProps = {
   color?:
@@ -28,54 +30,32 @@ export const SocialModal = ({ color = "default" }: SocialModalProps) => {
       <Tooltip showArrow radius="sm" content="Social Links" color={color}>
         <Rss className="w-5 aspect-square cursor-pointer" onClick={onOpen} />
       </Tooltip>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} radius="sm">
+      <Modal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        classNames={{ base: "rounded-[4px]" }}
+      >
         <ModalContent>
-          <ModalBody className="flex gap-5 flex-row items-center justify-center">
-            <Tooltip radius="sm" showArrow content="facebook" placement="top">
-              <Image
-                src="/social/facebook.png"
-                alt="Facebook"
-                width={36}
-                height={36}
-                className="object-contain rounded-full cursor-pointer"
-              />
-            </Tooltip>
-            <Tooltip radius="sm" showArrow content="instagram" placement="top">
-              <Image
-                src="/social/instagram.png"
-                alt="instagram"
-                width={36}
-                height={36}
-                className="object-contain rounded-full cursor-pointer"
-              />
-            </Tooltip>
-            <Tooltip radius="sm" showArrow content="spotify" placement="top">
-              <Image
-                src="/social/spotify.png"
-                alt="spotify"
-                width={36}
-                height={36}
-                className="object-contain rounded-full cursor-pointer"
-              />
-            </Tooltip>
-            <Tooltip radius="sm" showArrow content="youtube" placement="top">
-              <Image
-                src="/social/youtube.png"
-                alt="youtube"
-                width={36}
-                height={36}
-                className="object-contain rounded-full cursor-pointer"
-              />
-            </Tooltip>
-            <Tooltip radius="sm" showArrow content="github" placement="top">
-              <Image
-                src="/social/github.png"
-                alt="github"
-                width={36}
-                height={36}
-                className="object-contain rounded-full cursor-pointer"
-              />
-            </Tooltip>
+          <ModalBody className="flex gap-5 flex-row items-center justify-center pt-2">
+            {SOCIAL_LINKS.map((link, idx) => (
+              <Tooltip
+                key={idx}
+                classNames={{ content: "rounded-[4px]" }}
+                showArrow
+                content={link.name}
+                placement="top"
+              >
+                <Link href={link.href} target="_blank">
+                  <Image
+                    src={`/social/${link.name}.png`}
+                    alt={link.name}
+                    width={36}
+                    height={36}
+                    className="object-contain cursor-pointer"
+                  />
+                </Link>
+              </Tooltip>
+            ))}
           </ModalBody>
         </ModalContent>
       </Modal>

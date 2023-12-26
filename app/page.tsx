@@ -8,7 +8,9 @@ const Home = () => {
     <>
       <HeroSection />
       <SkillsSection />
-      <Divider className="mt-20 mb-10" />
+      <div className="container">
+        <Divider className="mt-20 mb-10" />
+      </div>
       <ProjectsSection />
     </>
   );

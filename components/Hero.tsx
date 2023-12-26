@@ -3,7 +3,6 @@
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { Typewriter } from "react-simple-typewriter";
-import { SocialModal } from "./modals/Social";
 
 export const Hero = () => {
   return (
@@ -23,11 +22,13 @@ export const Hero = () => {
             Your Friendly Web Developer Ready to Create an Impact Online.
           </span>
           <div className="flex gap-5 items-center max-md:justify-center">
-            <Button radius="sm" color="primary" className="w-fit px-10 ">
+            <Button
+              radius="sm"
+              color="primary"
+              className="w-fit px-10 rounded-[4px]"
+              variant="ghost"
+            >
               Get in Touch
-            </Button>
-            <Button radius="sm" color="primary" isIconOnly variant="ghost">
-              <SocialModal color="primary" />
             </Button>
           </div>
         </div>

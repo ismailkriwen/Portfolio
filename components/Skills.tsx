@@ -14,7 +14,7 @@ export const Skills = () => {
           {SKILLS.map((skill, index) => (
             <div
               key={index}
-              className="rounded-md shadow-md dark:shadow-white/20 p-4 bg-zinc-950 text-white dark:bg-zinc-50 dark:text-black h-[200px]"
+              className="rounded-md shadow-lg dark:shadow-white/10 p-4 bg-zinc-950 text-white dark:bg-zinc-50 dark:text-black w-full h-[200px]"
             >
               <div className="flex gap-5 items-center">
                 <Image
